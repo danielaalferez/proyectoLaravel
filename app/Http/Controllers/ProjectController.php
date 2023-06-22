@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Project;
 use redirect;
 
-class ProjectsController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        $project = Projects::all();
+        $projects = Project::all();
         return view('projects.index',compact(["projects"]));
     }
 
@@ -38,7 +38,7 @@ class ProjectsController extends Controller
      */
     public function store(Request $request)
     {
-        $project = Projects::create($request->all());
+        $project = Project::create($request->all());
 
         return redirect()->route('projects.index')
         ->with("mensaje", 'Proyecto creado correctamente')
@@ -54,8 +54,8 @@ class ProjectsController extends Controller
     public function show($id)
     {
         $project = Project::findOrFail($id);
-        $tareas = $project->tareas;
-        return view('projects.show',compact(['project','pagos']));
+        $pays = $project->pays;
+        return view('projects.show',compact(['project','pays']));
     }
 
     /**
@@ -97,8 +97,8 @@ class ProjectsController extends Controller
     public function destroy($id)
     {
         $project = Project::findOrFail($id);
-        $tareas = $projects->tareas;
-        if(count($tareas)>0){
+        $pays = $project->pays;
+        if(count($pays)>0){
             return redirect()->route('projects.index')
             ->with("mensaje", 'El proyecto contiene pagos que se deben eliminar')
             ->with("tipo", 'danger');
@@ -114,8 +114,8 @@ class ProjectsController extends Controller
     public function delete($id)
     {
         $project = Project::findOrFail($id);
-        $tareas = $project->tareas;
-        if(count($tareas)>0){
+        $pays = $project->pays;
+        if(count($pays)>0){
             return redirect()->route('projects.index')
             ->with("mensaje", 'El proyecto contiene pagos que se deben eliminar')
             ->with("tipo", 'danger');

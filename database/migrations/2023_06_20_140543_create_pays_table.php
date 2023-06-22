@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('pays', function (Blueprint $table) {
             $table->id();
-            $table->Integer('credit_num');
+            $table->string('credit_num');
             $table->Text('due_date');
             $table->Integer('segurity_code');
-            $table->floatval('amount_paid');
+            $table->float('amount_paid');
             $table->String('description');
-            $table->floatval('amount_paid');
+            $table->unsignedBigInteger('project_id')->index();
+           
 
             $table->timestamps();
 

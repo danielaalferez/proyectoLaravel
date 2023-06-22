@@ -17,14 +17,14 @@ class PayController extends Controller
      */
     public function index()
     {
-        $projects = Auth::project();
-        $pay = $project->pay;
+        
+        $pays = Pay::all();/**/
         return view('pays.index',compact(['pays']));
     }
 
-    public function listarPorProject_id($project_id) {
-        $pay = Pay::where('project_id',$project_id);
-        return $tareas;
+    public function listarPorProject($project_id) {
+        $pays = Pay::where('project_id',$project_id);
+        return $pays;
     }
     /**
      * Show the form for creating a new resource.
@@ -33,9 +33,9 @@ class PayController extends Controller
      */
     public function create()
     {
-        $pays = Auth::pay();
-        $projects = $pay->projects;
-        return view('pay.create',compact(['projects']));
+        $projects = Project::all();/**/
+        
+        return view('Pays.create',compact(['projects']));
     }
 
     /**
@@ -71,8 +71,8 @@ class PayController extends Controller
      */
     public function edit($id)
     {
-        $pay = Auth::pay();
-        $projects = $pay->projects;
+        $project = Auth::project();/**/
+        $pays = $project->pays;/**/
         $pay = Pay::findOrFail($id);
         return view('pays.edit',compact(['pay','projects']));
     }

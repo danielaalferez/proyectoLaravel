@@ -15,9 +15,8 @@ class Project extends Model
         "id",
         "name",
         "date",
-        "code",
-        "phone",
-        "description"
+        "documento",
+        "phone"
     ];
 
     public function Pay() {

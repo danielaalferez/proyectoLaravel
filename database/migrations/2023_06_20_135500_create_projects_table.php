@@ -17,9 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->Date('date');
-            $table->Text('code');
+            $table->Text('documento');
             $table->Integer('phone');
-            $table->String('description');
 
             $table->timestamps();
         });

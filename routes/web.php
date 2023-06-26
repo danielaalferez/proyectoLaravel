@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('welcome');
-});
+})->name("inicio");
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -34,10 +34,17 @@ Route::middleware('auth')->group(function () {
 
     Route::resource("pays",PayController::class);
     Route::get('pays-delete/{pay}',[PayController::class,'delete'])->name('pays.delete');
+
+});
+
+Route::get('/base', function () {
+    return view('layouts.base');
 });
 
 
 
 
-require __DIR__.'/auth.php';
 
+
+
+require __DIR__.'/auth.php';

@@ -38,7 +38,7 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $project = Project::create($request->all());
+        $projects = Project::create($request->all());
 
         return redirect()->route('projects.index')
         ->with("mensaje", 'Proyecto creado correctamente')
@@ -53,7 +53,7 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        $project = Project::findOrFail($id);
+        $projects = Project::findOrFail($id);
         $pays = $project->pays;
         return view('projects.show',compact(['project','pays']));
     }
@@ -66,7 +66,7 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        $project = Project::findOrFail($id);
+        $projects = Project::findOrFail($id);
         return view('projects.edit',compact(['project']));
     }
 
@@ -79,9 +79,9 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $project = Project::findOrFail($id);
-        $project->fill($request->all());
-        $project->save();
+        $projects = Project::findOrFail($id);
+        $projects->fill($request->all());
+        $projects->save();
 
         return redirect()->route('projects.index')
         ->with("mensaje", 'Proyecto editad correctamente')
@@ -96,14 +96,14 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        $project = Project::findOrFail($id);
+        $projects = Project::findOrFail($id);
         $pays = $project->pays;
         if(count($pays)>0){
             return redirect()->route('projects.index')
             ->with("mensaje", 'El proyecto contiene pagos que se deben eliminar')
             ->with("tipo", 'danger');
         }else{
-            $project->delete();
+            $projects->delete();
             return redirect()->route('projects.index')
             ->with("mensaje", 'Proyecto eliminado correctamente')
             ->with("tipo", 'success');
@@ -113,7 +113,7 @@ class ProjectController extends Controller
 
     public function delete($id)
     {
-        $project = Project::findOrFail($id);
+        $projects = Project::findOrFail($id);
         $pays = $project->pays;
         if(count($pays)>0){
             return redirect()->route('projects.index')

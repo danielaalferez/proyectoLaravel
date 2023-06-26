@@ -46,7 +46,7 @@ class PayController extends Controller
      */
     public function store(Request $request)
     {
-        $pay = Pay::create($request->all());
+        $pays = Pay::create($request->all());
         return redirect()->route('pays.index')
         ->with("mensaje", 'Pago creado correctamente')
         ->with("tipo", 'success');
@@ -73,7 +73,7 @@ class PayController extends Controller
     {
         $project = Auth::project();/**/
         $pays = $project->pays;/**/
-        $pay = Pay::findOrFail($id);
+        $pays = Pay::findOrFail($id);
         return view('pays.edit',compact(['pay','projects']));
     }
 
@@ -86,7 +86,7 @@ class PayController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pay = Pay::findOrFail($id);
+        $pays = Pay::findOrFail($id);
         $pay->fill($request->all());
         $pay->save();
         return redirect()->route('pays.index')
@@ -102,7 +102,7 @@ class PayController extends Controller
      */
     public function destroy($id)
     {
-        $pay = Pay::findOrFail($id);
+        $pays = Pay::findOrFail($id);
         $pay->delete();
         return redirect()->route('pays.index')
         ->with("mensaje", 'Pago eliminado correctamente')
@@ -111,7 +111,7 @@ class PayController extends Controller
 
     public function delete($id)
     {
-        $pay = Pay::findOrFail($id);
+        $pays = Pay::findOrFail($id);
         return view('pays.delete', compact(['pay']));
     }
 }

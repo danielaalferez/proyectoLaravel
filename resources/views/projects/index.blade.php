@@ -1,8 +1,9 @@
 @extends('layouts.base')
 @section('titulo', 'Inscripciones')
+
 @section('botonera')
 
-    <a href="{{ route('projects.create') }}" class="btn btn-primary">Inscripciones aqui</a>
+    <a href="{{ route('projects.create') }}" class="btn btn-primary">Inscribase aqui</a>
 
 @endsection
 
@@ -11,13 +12,12 @@
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
-                    <td>ID</td>
-                    <td>nombre</td>
-                    <td>fecha</td>
-                    <td>codigo</td>
-                    <td>numero documento</td>
-                    <td>telefono</td>
-                   
+                    <td style="text-align:center;"><b>ID</b></td>
+                    <td style="text-align:center;"><b>Nombre</b></td>
+                    <td style="text-align:center;"><b>Fecha</b></td>
+                    <td style="text-align:center;"><b>Documento</b></td>
+                    <td style="text-align:center;"><b>Numero celular</b></td>
+                    <td style="text-align:center;"><b>Acciones</b></td>
                 </tr>
             </thead>
             <tbody>
@@ -33,15 +33,11 @@
                             {{ $project->date }}
                         </td>
                         <td>
-                            {{ $project->code }}
-                        </td>
-                        <td>
-                            {{ $project->documento }}
+                            {{ $project->documento}}
                         </td>
                         <td>
                             {{ $project->phone }}
                         </td>
-                      
                         <td>
                             <div class="d-flex">
                                 <a href="{{ route('projects.show',['project'=>$project->id]) }}" class="btn btn-success">Detalle</a>

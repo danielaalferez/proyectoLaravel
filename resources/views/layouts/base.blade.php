@@ -13,11 +13,11 @@
     <title>Hello, world!</title>
 </head>
 
-<body>
+<body class="container justify-content-center" style="width: 90%;">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/">TODO</a>
+                <a class="navbar-brand" href="/">Mi App</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -58,9 +58,9 @@
         </nav>
     </header>
     <div class="container">
-        <div class="row d-flex justify-content-center mt-3">
+        <div class="row d-flex justify-content-center mt-3" style="background-color: lightgrey;">
             <div class="col-md-12">
-                <h1 class="text-center text-success">
+                <h1 class="text-center text-dark">
                     @yield('titulo')
                 </h1>
             </div>
@@ -84,14 +84,17 @@
             @yield('contenido')
         </div>
     </div>
-    <footer>
-
-    </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
     @yield('scripts')
+    <footer style="margin-top: 50px; background-color: lightgrey; width: 100%; height: 50px; border-radius: 2px;">
+            <h6 class="autor" style="line-height: 50px; height: 15px; margin-left: 40px;">Escuela Deportiva</h6>
+            <h6 class="copy d-flex justify-content-center" style="line-height: 50px; height: 15px; margin-top: -25px;"> &#169; 2023</h6>
+            <h6 class="autor" style="display: flex; justify-content: flex-end; margin-right: 60px; margin-top: -10px;">
+                Santiago Bautista & Daniela Alferez</h6>
+            
+    </footer>
 </body>
 
 </html>

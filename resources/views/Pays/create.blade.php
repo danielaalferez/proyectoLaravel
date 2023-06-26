@@ -1,45 +1,47 @@
 @extends('layouts.base')
 @section('titulo',"FORMULARIO DE PAGOS")
-@section("botonera")
-<a href="{{ route('projects.index') }}" class="btn btn-success">Regresar a Pagos</a>
-@endsection
+
 
 @section('contenido')
-
-<form action="{{ route('pays.store') }}" method="POST">
+    <section style="background-color: #e3f2fd; width: 1200px; height: 720px;">
+        <div class="container" style="border: 2px solid black; width: 700px; height: 670px; background-color: white; margin-top: 30px;">
+        <form action="{{ route('pays.store') }}" method="POST" style="margin-top: 10px;">
     @csrf
-   
     <div class="mb-3">
-        <label for="name" class="form-label">Nombre</label>
+        <label for="name" class="form-label"><b>Nombre</b></label>
         <input type="text" class="form-control" id="name" name="name">
     </div>
     <div class="mb-3">
-        <label for="code" class="form-label">Codigo</label>
+        <label for="code" class="form-label"><b>Documento</b></label>
         <input type="text" class="form-control" id="code" name="code">
     </div>
     <div class="mb-3">
-        <label for="credit_num" class="form-label">credit number</label>
+        <label for="credit_num" class="form-label"><b>Numero de la Tarjeta</b></label>
         <input type="text" class="form-control" id="credit_num" name="credit_num">
     </div>
     <div class="mb-3">
-        <label for="due_date" class="form-label">due date</label>
+        <label for="due_date" class="form-label"><b>Fecha de Vencimiento</b></label>
         <input type="text" class="form-control" id="due_date" name="due_date">
     </div>
     <div class="mb-3">
-        <label for="segurity_code" class="form-label"> segurity code</label>
+        <label for="segurity_code" class="form-label"><b>Codigo de Seguridad (CVV)</b></label>
         <input type="text" class="form-control" id="segurity_code" name="segurity_code">
     </div>
     <div class="mb-3">
-        <label for="amount_paid" class="form-label"> pago monto</label>
+        <label for="amount_paid" class="form-label"><b>Monto a Pagar</b></label>
         <input type="text" class="form-control" id="amount_paid" name="amount_paid">
     </div>
     <div class="mb-3">
-        <label for="description" class="form-label">Descripción</label>
-        <textarea class="form-control" name="description" id="description" cols="30" rows="10"></textarea>
+        <label for="description" class="form-label"><b>Descripción del pago</b></label>
+        <input type="text" class="form-control" id="description" name="description">
     </div>
 
     <button type="submit" class="btn btn-primary">Crear</button>
-</form>
+    <a href="{{ route('pays.index') }}" class="btn btn-success">Regresar</a>
+    </form>
+        </div>
+    </section>
+
 
 @endsection
 

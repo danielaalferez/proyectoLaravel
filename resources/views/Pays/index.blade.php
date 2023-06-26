@@ -1,8 +1,8 @@
 @extends('layouts.base')
-@section('titulo', 'Pays')
+@section('titulo', 'Pagos')
 @section('botonera')
 
-    <a href="{{ route('pays.create') }}" class="btn btn-primary">Nueva Tarea</a>
+    <a href="{{ route('pays.create') }}" class="btn btn-primary">Pague Aqui</a>
 
 @endsection
 
@@ -13,12 +13,12 @@
             @csrf
             <thead>
                 <tr>
-                    <td>ID</td>
-                    <td>credit_num</td>
-                    <td>due_date</td>
-                    <td>segurity_code</td>
-                    <td>amount_paid</td>
-                    <td>descripcion</td>
+                    <td style="text-align:center"><b>ID</b></td>
+                    <td style="text-align:center"><b>Nombre</b></td>
+                    <td style="text-align:center"><b>Documento</b></td>
+                    <td style="text-align:center"><b>Cantidad Pagada</b></td>
+                    <td style="text-align:center"><b>Descripción Pago</b></td>
+                    <td style="text-align:center"><b>Acciones</b></td>
                 </tr>
             </thead>
             <tbody>
@@ -28,16 +28,10 @@
                             {{ $pay->id }}
                         </td>
                         <td>
-                            {{ $pay->credit_num }}
-                        </td>
-                        <td>
-                            {{ $pay->due_date }}
-                        </td>
-                        <td>
                             {{ $pay->project->nombre }}
                         </td>
                         <td>
-                            {{ $pay->segurity_code }}
+                            {{ $pay->project->documento }}
                         </td>
                         <td>
                             {{ $pay->amount_paid }}

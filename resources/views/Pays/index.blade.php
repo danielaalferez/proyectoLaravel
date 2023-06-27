@@ -1,24 +1,25 @@
 @extends('layouts.base')
-@section('titulo', 'Pays')
+@section('titulo', 'Pagos')
 @section('botonera')
 
-    <a href="{{ route('pays.create') }}" class="btn btn-primary">Nueva Tarea</a>
+    <a href="{{ route('pays.create') }}" class="btn btn-primary">Pague Aqui</a>
 
 @endsection
 
 @section('contenido')
-
-    <div class="tabla-lista">
+<section style="background-color: #e3f2fd; width: 100%; height: 300px">
+    <div class="container d-flex justify-content-center align-items-center" style="background-color: white; width: 80%; margin-top: 30px">
+    <div class="tabla-lista" style="margin-top: 20px">
         <table class="table table-bordered table-hover">
             @csrf
             <thead>
                 <tr>
-                    <td>ID</td>
-                    <td>credit_num</td>
-                    <td>due_date</td>
-                    <td>segurity_code</td>
-                    <td>amount_paid</td>
-                    <td>descripcion</td>
+                    <td style="text-align:center"><b>ID</b></td>
+                    <td style="text-align:center"><b>Nombre</b></td>
+                    <td style="text-align:center"><b>Documento</b></td>
+                    <td style="text-align:center"><b>Cantidad Pagada</b></td>
+                    <td style="text-align:center"><b>Descripción Pago</b></td>
+                    <td style="text-align:center"><b>Acciones</b></td>
                 </tr>
             </thead>
             <tbody>
@@ -28,16 +29,10 @@
                             {{ $pay->id }}
                         </td>
                         <td>
-                            {{ $pay->credit_num }}
-                        </td>
-                        <td>
-                            {{ $pay->due_date }}
-                        </td>
-                        <td>
                             {{ $pay->project->nombre }}
                         </td>
                         <td>
-                            {{ $pay->segurity_code }}
+                            {{ $pay->project->documento }}
                         </td>
                         <td>
                             {{ $pay->amount_paid }}
@@ -57,4 +52,7 @@
             </tbody>
         </table>
     </div>
+    </div>
+</section>
+    
 @endsection

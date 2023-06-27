@@ -21,7 +21,6 @@ return new class extends Migration
             $table->float('amount_paid');
             $table->String('description');
             $table->unsignedBigInteger('project_id')->index();
-           
 
             $table->timestamps();
 

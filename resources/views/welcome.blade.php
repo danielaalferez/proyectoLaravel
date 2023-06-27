@@ -1,5 +1,8 @@
-@include("layouts.base")
+@extends('layouts.base')
+@section('titulo', 'Escuela Deportiva')
 
+
+@section('contenido')
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,11 +14,8 @@
     <title>Document</title>
 </head>
 
-<body class="container justify-content-center" style="width: 90%;" ;>
+<body class="container justify-content-center" style="width: 90%; height: 3000px">
     <div>
-        <header>
-            <h1>Escuela Deportiva</h1>
-        </header>
         <section style="display: flex; background-color: lightgrey; width: auto; height: 300px;">
             <div class="container d-flex justify-content-center align-items-center" style="margin-bottom: 40px;">
                 <h4 style="margin-top: 50px; margin-left: 30px;">Nuestra escuela tiene como misión formular, adoptar,
@@ -43,57 +43,54 @@
             </div>
         </section>
         <section class="section2">
-            <div class="content2">
-                <h1 style="text-align: center;">Nuestras Categorias</h1>
+            <div class="content2" style="width: 100%;">
+                <h1 style="text-align: center; margin-top: 20px;">Nuestras Categorias</h1>
                 <p style="text-align: center;">Manejamos diferentes categorias de futbol <br>Dependiendo de la edad del
                     estudiante se le ubicará en su respectiva categoria.
                 </p>
             </div>
-            <div class=" content3" style="margin-top: 30px; margin-left: -35px;">
+            <div class=" content3 d-flex justify-content-center align-items-center" style=" width: 100%">
                 <div class="card">
                     <img src="{{ asset('img/ciconfut.jpg')  }}" alt="avatar"
-                        style=" margin-left: 50px; margin-top: 10px; width: 100px;">
+                        style=" margin-left: 90px; margin-top: 10px; width: 100px;">
                     <div class="contenido">
-                        <h4 style="margin-left: 10px;"><b>Categoria 2002</b></h4>
-                        <p>Dirigida por: <br>Ricardo Contreras<br>Especialista en Educación Física y Recreación.</p>
-                        <p class="p2" style="margin-top: -10px;">@Ricardo_Con</p>
+                        <h4 style="text-align:center;"><b>Categoria 2002</b></h4>
+                        <p style="text-align:center;">Dirigida por: <br>Ricardo Contreras<br>Especialista en Educación Física y Recreación.</p>
+                        <p class="p2" style="text-align:center;">@Ricardo_Con</p>
                     </div>
                 </div>
                 <div class="card">
                     <img src="{{ asset('img/ciconfut.jpg')  }}" alt="avatar"
-                        style=" margin-left: 50px; margin-top: 10px; width: 100px;">
+                        style=" margin-left: 90px; margin-top: 10px; width: 100px;">
                     <div class="contenido">
-                        <h4 style="margin-left: 10px;"><b>Categoria 2004</b></h4>
-                        <p>Dirigida por: <br>Andres Quintero<br>Especialista en Educación Física y Recreación.</p>
-                        <p class="p2" style="margin-top: -10px;">@Andres_Quin</p>
+                        <h4 style="text-align:center;"><b>Categoria 2004</b></h4>
+                        <p style="text-align:center;">Dirigida por: <br>Andres Quintero<br>Especialista en Educación Física y Recreación.</p>
+                        <p class="p2" style="text-align:center;">@Andres_Quin</p>
                     </div>
                 </div>
                 <div class="card">
                     <img src="{{ asset('img/ciconfut.jpg')  }}" alt="avatar"
-                        style=" margin-left: 50px; margin-top: 10px; width: 100px;">
+                        style=" margin-left: 90px; margin-top: 10px; width: 100px;">
                     <div class="contenido">
-                        <h4 style="margin-left: 10px;"><b>Categoria 2006</b></h4>
-                        <p>Dirigida por: <br>Carlos Duarte<br>Especialista en Educación Física y Recreación.</p>
-                        <p class="p2" style="margin-top: -10px;">@Carlitos_Du</p>
+                        <h4 style="text-align:center;"><b>Categoria 2006</b></h4>
+                        <p style="text-align:center;">Dirigida por: <br>Carlos Duarte<br>Especialista en Educación Física y Recreación.</p>
+                        <p class="p2" style="text-align:center;">@Carlitos_Du</p>
                     </div>
                 </div>
                 <div class="card">
                     <img src="{{ asset('img/ciconfut.jpg')  }}" alt="avatar"
-                        style=" margin-left: 50px; margin-top: 10px; width: 100px;">
+                        style=" margin-left: 90px; margin-top: 10px; width: 100px;">
                     <div class="contenido">
-                        <h4 style="margin-left: 10px;"><b>Categoria 2008</b></h4>
-                        <p>Dirigida por: <br>Laura Villamizar<br>Especialista en Educación Física y Recreación.</p>
-                        <p class="p2" style="margin-top: -10px;">@Laura_Vi</p>
+                        <h4 style="text-align:center;"><b>Categoria 2008</b></h4>
+                        <p style= "text-align:center;">Dirigida por: <br>Laura Villamizar<br>Especialista en Educación Física y Recreación.</p>
+                        <p class="p2" style="text-align:center;">@Laura_Vi</p>
                     </div>
                 </div>
             </div>
         </section>
-        <footer style="margin-top: 50px; background-color: lightgrey; width: 100%; height: 50px; border-radius: 2px;">
-            <h6 class="autor" style="line-height: 50px; height: 15px; margin-left: 40px;">Escuela Deportiva</h6>
-            <h6 class="copy" style="display: flex; justify-content: flex-end; margin-right: 60px; margin-top: -5px;">
-                &#169; 2023 Derechos reservados</h6>
-        </footer>
+        
     </div>
 </body>
 
 </html>
+@endsection

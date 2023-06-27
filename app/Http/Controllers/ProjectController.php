@@ -68,6 +68,8 @@ class ProjectController extends Controller
     {
         $project = Project::findOrFail($id);
         return view('projects.edit',compact(['project']));
+
+
     }
 
     /**

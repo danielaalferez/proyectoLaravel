@@ -25,12 +25,10 @@
         <label for="documento" class="form-label"><b>Numero documento</b></label>
         <input type="text" class="form-control" id="documento" name="documento">
     </div>
-
     <div class="mb-3">
         <label for="phone" class="form-label"><b>Celular</b></label>
         <input type="text" class="form-control" id="phone" name="phone">
     </div>
-   
     <button type="submit" class="btn btn-primary">Crear</button>
     <a href="{{ route('projects.index') }}" class="btn btn-success">Regresar </a>
 </form>

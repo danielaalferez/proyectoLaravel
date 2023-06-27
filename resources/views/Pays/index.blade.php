@@ -29,7 +29,7 @@
                             {{ $pay->id }}
                         </td>
                         <td>
-                            {{ $pay->project->nombre }}
+                            {{ $pay->project->name }}
                         </td>
                         <td>
                             {{ $pay->project->documento }}

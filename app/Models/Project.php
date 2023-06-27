@@ -19,7 +19,7 @@ class Project extends Model
         "phone"
     ];
 
-    public function Pay() {
+    public function pays() {
         return $this->hasMany(Pay::class,'project_id');
     }
 }

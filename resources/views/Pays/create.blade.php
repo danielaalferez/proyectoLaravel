@@ -8,12 +8,22 @@
         <form action="{{ route('pays.store') }}" method="POST" style="margin-top: 10px;">
     @csrf
     <div class="mb-3">
-        <label for="name" class="form-label"><b>Nombre</b></label>
-        <input type="text" class="form-control" id="name" name="name">
+        <label for="project_id" class="form-label">Nombre</label>
+        <Select name="project_id" id="project_id" class="form-control" required>
+            <option value="">--seleccione</option>
+            @foreach( $projects as $project)
+            <option value="{{$project->id}}">{{ $project->name}}</option>
+            @endforeach
+        </Select>
     </div>
     <div class="mb-3">
-        <label for="code" class="form-label"><b>Documento</b></label>
-        <input type="text" class="form-control" id="code" name="code">
+        <label for="project_id" class="form-label">Documento</label>
+        <Select name="project_id" id="project_id" class="form-control" required>
+            <option value="">--seleccione</option>
+            @foreach( $projects as $project)
+            <option value="{{$project->id}}">{{ $project->documento}}</option>
+            @endforeach
+        </Select>
     </div>
     <div class="mb-3">
         <label for="credit_num" class="form-label"><b>Numero de la Tarjeta</b></label>
@@ -35,15 +45,7 @@
         <label for="description" class="form-label"><b>Descripción del pago</b></label>
         <input type="text" class="form-control" id="description" name="description">
     </div>
-    <div class="mb-3">
-        <label for="project_id" class="form-label">Proyecto</label>
-        <Select name="project_id" id="project_id" class="form-control" required>
-            <option value="">--seleccione</option>
-            @foreach(projects as project)
-            <option value="{{$project->id}}"></option>
-
-        </Select>
-    </div>
+ 
 
     <button type="submit" class="btn btn-primary">Crear</button>
     <a href="{{ route('pays.index') }}" class="btn btn-success">Regresar</a>

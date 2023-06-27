@@ -20,7 +20,7 @@ class Pay extends Model
         "project_id"
     ];
 
-    public function Project() {
-        return $this->hasMany(Project::class,'pay_id');
+    public function project() {
+        return $this->belongsTo(Project::class,'project_id');
     }
 }

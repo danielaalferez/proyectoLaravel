@@ -23,9 +23,9 @@
         <select name="project_id_id" id="project_id_id" class="form-control" required>
             @foreach ($projects as $project)
                 @if($pay->project_id == $project->id)
-                <option value="{{ $project_id->id }}" selected>{{ $project_id->nombre }}</option>
+                <option value="{{ $project->id }}" selected>{{ $project->nombre }}</option>
                 @else
-                <option value="{{ $project_id->id }}">{{ $project_id->nombre }}</option>
+                <option value="{{ $project->id }}">{{ $project_id->name }}</option>
                 @endif
             @endforeach
         </select>

@@ -36,6 +36,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource("pays",PayController::class);
     Route::get('pays-delete/{pay}',[PayController::class,'delete'])->name('pays.delete');
+    
 
 });
 

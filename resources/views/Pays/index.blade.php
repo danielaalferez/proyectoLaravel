@@ -42,9 +42,9 @@
                         </td>
                         <td>
                             <div class="d-flex">
-                                <a href="{{ route('pay.edit',['pay'=>$pay->id]) }}" class="btn btn-warning" style="margin-left: 10px">Editar</a>
-                                <a href="{{ route('pay.detail',['pay'=>$pay->id]) }}" class="btn btn-warning" style="margin-left: 10px">detalle</a>
-                                <a href="{{ route('pay.delete',['pay'=>$pay->id]) }}" class="btn btn-danger" style="margin-left: 10px">Eliminar</a>
+                                <a href="{{ route('pays.edit',['pay'=>$pay->id]) }}" class="btn btn-warning" style="margin-left: 10px">Editar</a>
+                                <a href="" class="btn btn-warning" style="margin-left: 10px">detalle</a>
+                                <a href="{{ route('pays.delete',['pay'=>$pay->id]) }}" class="btn btn-danger" style="margin-left: 10px">Eliminar</a>
                             </div>
                         </td>
                     </tr>

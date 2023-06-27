@@ -43,8 +43,8 @@
             </div>
         </section>
         <section class="section2">
-            <div class="content2" style="width: 100%; heigth: 800px;">
-                <h1 style="text-align: center;">Nuestras Categorias</h1>
+            <div class="content2" style="width: 100%;">
+                <h1 style="text-align: center; margin-top: 20px;">Nuestras Categorias</h1>
                 <p style="text-align: center;">Manejamos diferentes categorias de futbol <br>Dependiendo de la edad del
                     estudiante se le ubicará en su respectiva categoria.
                 </p>

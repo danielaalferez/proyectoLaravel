@@ -7,8 +7,9 @@
 @endsection
 
 @section('contenido')
-
-    <div class="tabla-lista">
+<section style="background-color: #e3f2fd; width: 100%; height: 300px">
+    <div class="container d-flex justify-content-center align-items-center" style="background-color: white; width: 80%; margin-top: 30px">
+    <div class="tabla-lista" style="margin-top: 20px">
         <table class="table table-bordered table-hover">
             @csrf
             <thead>
@@ -50,4 +51,7 @@
             </tbody>
         </table>
     </div>
+    </div>
+</section>
+    
 @endsection

@@ -37,6 +37,15 @@
         <label for="description" class="form-label">Descripción</label>
         <textarea class="form-control" name="description" id="description" cols="30" rows="10"></textarea>
     </div>
+    <div class="mb-3">
+        <label for="project_id" class="form-label">Proyecto</label>
+        <Select name="project_id" id="project_id" class="form-control" required>
+            <option value="">--seleccione</option>
+            @foreach(projects as project)
+            <option value="{{$project->id}}"></option>
+
+        </Select>
+    </div>
 
     <button type="submit" class="btn btn-primary">Crear</button>
 </form>

@@ -31,6 +31,8 @@ Route::middleware('auth')->group(function () {
 
     Route::resource("projects",ProjectController::class);
     Route::get('projects-delete/{project}',[ProjectController::class,'delete'])->name('projects.delete');
+    Route::get('projects-edit/{project}',[ProjectController::class,'edit'])->name('projects.edit');
+
 
     Route::resource("pays",PayController::class);
     Route::get('pays-delete/{pay}',[PayController::class,'delete'])->name('pays.delete');

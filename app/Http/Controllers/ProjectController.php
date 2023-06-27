@@ -114,7 +114,7 @@ class ProjectController extends Controller
     public function delete($id)
     {
         $projects = Project::findOrFail($id);
-        $pays = $project->pays;
+        $pays = $projects->pays;
         if(count($pays)>0){
             return redirect()->route('projects.index')
             ->with("mensaje", 'El proyecto contiene pagos que se deben eliminar')

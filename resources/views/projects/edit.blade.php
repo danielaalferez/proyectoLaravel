@@ -1,5 +1,5 @@
 @extends('layouts.base')
-@section('titulo',"Editar")
+@section('titulo',"EDITAR INSCRIPCIÓN")
 
 @section('contenido')
 

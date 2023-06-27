@@ -1,7 +1,6 @@
 @extends('layouts.base')
 @section('titulo',"FORMULARIO DE PAGOS")
 
-
 @section('contenido')
     <section style="background-color: #e3f2fd; width: 1200px; height: 720px;">
         <div class="container" style="border: 2px solid black; width: 700px; height: 670px; background-color: white; margin-top: 30px;">
@@ -26,7 +25,7 @@
         </Select>
     </div>
     <div class="mb-3">
-        <label for="credit_num" class="form-label"><b>Numero de la Tarjeta</b></label>
+        <label for="credit_num" class="form-label"><b>Numero Tarjeta Credito/Debito</b></label>
         <input type="text" class="form-control" id="credit_num" name="credit_num">
     </div>
     <div class="mb-3">
@@ -45,7 +44,6 @@
         <label for="description" class="form-label"><b>Descripción del pago</b></label>
         <input type="text" class="form-control" id="description" name="description">
     </div>
- 
 
     <button type="submit" class="btn btn-primary">Crear</button>
     <a href="{{ route('pays.index') }}" class="btn btn-success">Regresar</a>

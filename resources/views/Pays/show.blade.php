@@ -9,20 +9,18 @@
     <div class="row d-flex justify-content-center">
         <div class="col-md-6" style="margin-top: 20px;">
             <h1 style="text-align:center;">{{ $project->name}}</h1>
-            <h3 style="text-align:center;">Fecha de Nacimiento:
-                {{ $project->date }}
-            </h3>
-            <h5 style="text-align:center;">Documento:
+            <h3 style="text-align:center;">Documento:
                 {{ $project->documento }}
+            </h3>
+            <h5 style="text-align:center;">Monto Pagado:
+                {{ $pays->amount_paid }}
             </h5>
-            <p style="text-align:center;">Telefono:
-                {{ $project->phone }}
+            <p style="text-align:center;">Descripción del pago:
+                {{ $pays->description }}
             </p>
+            
         </div>
     </div>
     <a href="{{ route('projects.index') }}" class="btn btn-success" style="margin-top:10px; width: 90px; height: 40px; margin-left: 255px;">Regresar</a>
     </div>
 </section>
-
-    
-@endsection

@@ -2,12 +2,12 @@
 @section('titulo', 'Pagos')
 @section('botonera')
 
-    <a href="{{ route('pays.create') }}" class="btn btn-primary">Pague Aqui</a>
+    <a href="{{ route('pays.create') }}" class="btn btn-primary">Pague aqui</a>
 
 @endsection
 
 @section('contenido')
-<section style="background-color: #e3f2fd; width: 100%; height: 300px">
+<section style="background-color: #e3f2fd; width: 100%; height: 500px">
     <div class="container d-flex justify-content-center align-items-center" style="background-color: white; width: 80%; margin-top: 30px">
     <div class="tabla-lista" style="margin-top: 20px">
         <table class="table table-bordered table-hover">
@@ -43,7 +43,7 @@
                         <td>
                             <div class="d-flex">
                                 <a href="{{ route('pays.edit',['pay'=>$pay->id]) }}" class="btn btn-warning" style="margin-left: 10px">Editar</a>
-                                <a href="" class="btn btn-warning" style="margin-left: 10px">detalle</a>
+                                <a href="" class="btn btn-success" style="margin-left: 10px">Detalle</a>
                                 <a href="{{ route('pays.delete',['pay'=>$pay->id]) }}" class="btn btn-danger" style="margin-left: 10px">Eliminar</a>
                             </div>
                         </td>

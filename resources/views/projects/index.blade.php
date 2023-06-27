@@ -8,7 +8,7 @@
 @endsection
 
 @section('contenido')
-<section style="background-color: #e3f2fd; width: 100%; height: 400px">
+<section style="background-color: #e3f2fd; width: 100%; height: 500px">
     <div class="container d-flex justify-content-center align-items-center" style="background-color: white; width: 80%; margin-top: 30px">
     <div class="tabla-lista" style="margin-top: 20px">
         <table class="table table-bordered table-hover">

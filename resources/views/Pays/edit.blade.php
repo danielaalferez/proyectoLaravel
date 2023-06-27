@@ -1,5 +1,5 @@
 @extends('layouts.base')
-@section('titulo',"Crear un nuevo `pago")
+@section('titulo',"EDITAR PAGO")
 @section("botonera")
 <a href="{{ route('pays.index') }}" class="btn btn-success">Regresar a Pagos</a>
 @endsection

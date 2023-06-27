@@ -3,7 +3,7 @@
 
 @section('contenido')
 
-    <section style="background-color: #e3f2fd; width: 1200px; height: 550px;">
+    <section style="background-color: #e3f2fd; width: 1200px; height: 500px;">
     <div class="container" style="border: 2px solid black; width: 650px; height: 420px; background-color: white; margin-top: 30px;">
         <form action="{{ route('projects.update',['project'=>$project->id]) }}" method="POST" style="margin-top: 10px">
         @csrf

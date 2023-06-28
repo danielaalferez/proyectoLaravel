@@ -3,8 +3,8 @@
 
 @section('contenido')
 
-    <section style="background-color: #e3f2fd; width: 1200px; height: 500px;">
-    <div class="container" style="border: 2px solid black; width: 650px; height: 420px; background-color: white; margin-top: 30px;">
+    <section style="background-color: #e3f2fd; width: 1200px; height: 700px;">
+    <div class="container" style="border: 2px solid black; width: 650px; height: 570px; background-color: white; margin-top: 30px;">
         <form action="{{ route('pays.update',['pay'=>$pay->id]) }}" method="POST" style="margin-top: 10px">
         @csrf
         @method('put')
@@ -26,11 +26,11 @@
         <input type="text" class="form-control" id="amount_paid" name="amount_paid" value="{{ $pay->amount_paid }}">
     </div>
     <div class="mb-3">
-        <label for="description" class="form-label"><b>Descripcion</b></label>
+        <label for="description" class="form-label"><b>Descripción</b></label>
         <input type="text" class="form-control" id="description" name="description" value="{{ $pay->description }}">
     </div>
     <div class="mb-3">
-    <label for="project_id" class="form-label">Proyecto</label>
+    <label for="project_id" class="form-label"><b>Inscrito</b></label>
     <select name="project_id" id="project_id" class="form-control" required>
         @foreach ($projects as $project)
             @if($pay->project_id == $project->id)
@@ -40,8 +40,8 @@
             @endif
         @endforeach
     </select>
-    <button type="submit" class="btn btn-primary">Guardar</button>
-    <a href="{{ route('projects.index') }}" class="btn btn-success">Regresar</a>
+    <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Guardar</button>
+    <a href="{{ route('pays.index') }}" class="btn btn-success" style="margin-top: 10px;">Regresar</a>
 </form>
     </div>
     </section>

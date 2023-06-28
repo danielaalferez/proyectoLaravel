@@ -31,7 +31,7 @@
 
                         @auth
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('projects.index') }}">Proyectos</a>
+                                <a class="nav-link" href="{{ route('projects.index') }}">Inscripciones</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('pays.index') }}">Pagos</a>

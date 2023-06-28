@@ -15,7 +15,7 @@
     </div>
     <div class="mb-3">
         <label for="due_date" class="form-label"><b>Fecha vencimiento</b></label>
-        <input type="date" class="form-control" id="due_date" name="due_date" value="{{ $pay->due_date }}">
+        <input type="text" class="form-control" id="due_date" name="due_date" value="{{ $pay->due_date }}">
     </div>
     <div class="mb-3">
         <label for="segurity_code" class="form-label"><b>Codigo Seguridad</b></label>
@@ -29,26 +29,27 @@
         <label for="description" class="form-label"><b>Descripcion</b></label>
         <input type="text" class="form-control" id="description" name="description" value="{{ $pay->description }}">
     </div>
-
-@endsection
-
     <div class="mb-3">
-        <label for="project_id" class="form-label">Proyecto</label>
-        <select name="project_id" id="project_id" class="form-control" required>
-            @foreach ($projects as $project)
-                @if($pay->project_id == $project->id)
+    <label for="project_id" class="form-label">Proyecto</label>
+    <select name="project_id" id="project_id" class="form-control" required>
+        @foreach ($projects as $project)
+            @if($pay->project_id == $project->id)
                 <option value="{{ $project->id }}" selected>{{ $project->name }}</option>
-                @else
-                <option value="{{ $project->id }}">{{ $project_id->name }}</option>
-                @endif
-            @endforeach
-        </select>
-    </div>
-
+            @else
+                <option value="{{ $project->id }}">{{ $project->name }}</option>
+            @endif
+        @endforeach
+    </select>
     <button type="submit" class="btn btn-primary">Guardar</button>
     <a href="{{ route('projects.index') }}" class="btn btn-success">Regresar</a>
 </form>
     </div>
     </section>
+</div>
+@endsection
+
+
+
+    
 
     

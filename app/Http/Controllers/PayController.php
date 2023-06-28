@@ -61,10 +61,8 @@ class PayController extends Controller
 
     public function show($id)
     {
-        $project = Project::findOrFail($id);
         $pay = Pay::findOrFail($id);
-        $pays = $project->pays;
-        return view('pays.show',compact(['project','pays']));
+        return view('pays.show',compact(['pay']));
     }
 
     /**
@@ -75,10 +73,9 @@ class PayController extends Controller
      */
     public function edit($id)
     {
-        $project = Auth::project();/**/
-        $projects = $pay->projects;/**/
+        $projects = Project::all();
         $pay= Pay::findOrFail($id);
-        return view('pays.edit',compact(['pay  ','projects']));
+        return view('pays.edit',compact(['pay','projects']));
     }
 
     /**

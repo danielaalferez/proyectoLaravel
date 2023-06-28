@@ -58,9 +58,13 @@ class PayController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function show($id)
     {
-        //
+        $project = Project::findOrFail($id);
+        $pay = Pay::findOrFail($id);
+        $pays = $project->pays;
+        return view('pays.show',compact(['project','pays']));
     }
 
     /**
@@ -72,9 +76,9 @@ class PayController extends Controller
     public function edit($id)
     {
         $project = Auth::project();/**/
-        $pays = $project->pays;/**/
+        $projects = $pay->projects;/**/
         $pay= Pay::findOrFail($id);
-        return view('pays.edit',compact(['pays  ','projects']));
+        return view('pays.edit',compact(['pay  ','projects']));
     }
 
     /**
@@ -86,9 +90,9 @@ class PayController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pays = Pay::findOrFail($id);
-        $pays->fill($request->all());#s
-        $pays->save();#s
+        $pay = Pay::findOrFail($id);
+        $pay->fill($request->all());#s
+        $pay->save();#s
         return redirect()->route('pays.index')
         ->with("mensaje", 'Pago editado correctamente')
         ->with("tipo", 'success');
@@ -102,8 +106,8 @@ class PayController extends Controller
      */
     public function destroy($id)
     {
-        $pays = Pay::findOrFail($id);
-        $pays->delete();
+        $pay = Pay::findOrFail($id);
+        $pay->delete();
         return redirect()->route('pays.index')
         ->with("mensaje", 'Pago eliminado correctamente')
         ->with("tipo", 'success');
@@ -111,7 +115,7 @@ class PayController extends Controller
 
     public function delete($id)
     {
-        $pays = Pay::findOrFail($id);
+        $pay = Pay::findOrFail($id);
         return view('pays.delete', compact(['pay']));
     }
 }

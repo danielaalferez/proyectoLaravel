@@ -1,59 +1,54 @@
 @extends('layouts.base')
 @section('titulo',"EDITAR PAGO")
-@section("botonera")
-<a href="{{ route('pays.index') }}" class="btn btn-success">Regresar a Pagos</a>
-@endsection
 
 @section('contenido')
 
-<form action="{{ route('pays.update',['pay'=>$pay->id]) }}" method="POST">
-    @csrf
-    @method('put')
+    <section style="background-color: #e3f2fd; width: 1200px; height: 500px;">
+    <div class="container" style="border: 2px solid black; width: 650px; height: 420px; background-color: white; margin-top: 30px;">
+        <form action="{{ route('pays.update',['pay'=>$pay->id]) }}" method="POST" style="margin-top: 10px">
+        @csrf
+        @method('put')
+    
     <div class="mb-3">
-        <label for="titulo" class="form-label">Título</label>
-        <input type="text" class="form-control" id="titulo" name="titulo" value="{{ $pay->titulo }}">
+        <label for="credit_num" class="form-label"><b>Numero Tarjeta Credito/Debitp</b></label>
+        <input type="text" class="form-control" id="credit_num" name="credit_num" value="{{ $pay->credit_num }}">
     </div>
     <div class="mb-3">
-        <label for="descripcion" class="form-label">Descripción</label>
-        <textarea class="form-control" name="descripcion" id="descripcion" cols="30" rows="10">{{ $pay->descripcion }}</textarea>
-        <input type="hidden" value="{{ Auth::pay()->id }}" name="pay_id">
+        <label for="due_date" class="form-label"><b>Fecha vencimiento</b></label>
+        <input type="date" class="form-control" id="due_date" name="due_date" value="{{ $pay->due_date }}">
     </div>
+    <div class="mb-3">
+        <label for="segurity_code" class="form-label"><b>Codigo Seguridad</b></label>
+        <input type="text" class="form-control" id="segurity_code" name="segurity_code" value="{{ $pay->segurity_code }}">
+    </div>
+    <div class="mb-3">
+        <label for="amount_paid" class="form-label"><b>Monto a Pagar</b></label>
+        <input type="text" class="form-control" id="amount_paid" name="amount_paid" value="{{ $pay->amount_paid }}">
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label"><b>Descripcion</b></label>
+        <input type="text" class="form-control" id="description" name="description" value="{{ $pay->description }}">
+    </div>
+
+@endsection
+
     <div class="mb-3">
         <label for="project_id" class="form-label">Proyecto</label>
-        <select name="project_id_id" id="project_id_id" class="form-control" required>
+        <select name="project_id" id="project_id" class="form-control" required>
             @foreach ($projects as $project)
                 @if($pay->project_id == $project->id)
-                <option value="{{ $project->id }}" selected>{{ $project->nombre }}</option>
+                <option value="{{ $project->id }}" selected>{{ $project->name }}</option>
                 @else
                 <option value="{{ $project->id }}">{{ $project_id->name }}</option>
                 @endif
             @endforeach
         </select>
     </div>
-    <div class="mb-3">
-        <label for="estado" class="form-label">Estado</label>
-        <select name="estado" id="estado" class="form-control" required>
-            @if($tarea->estado == "pendiente")
-            <option value="pendiente" selected>Pendiente</option>
-            @else
-            <option value="pendiente">Pendiente</option>
-            @endif
 
-            @if($tarea->estado == "iniciada")
-            <option value="iniciada" selected>Iniciada</option>
-            @else
-            <option value="iniciada">Iniciada</option>
-            @endif
-
-            @if($tarea->estado == "terminada")
-            <option value="terminada" selected>Terminada</option>
-            @else
-            <option value="terminada">Terminada</option>
-            @endif
-        </select>
-    </div>
     <button type="submit" class="btn btn-primary">Guardar</button>
+    <a href="{{ route('projects.index') }}" class="btn btn-success">Regresar</a>
 </form>
+    </div>
+    </section>
 
-@endsection
-
+    

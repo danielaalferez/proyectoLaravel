@@ -98,14 +98,14 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        $projects = Project::findOrFail($id);
+        $project = Project::findOrFail($id);
         $pays = $project->pays;
         if(count($pays)>0){
             return redirect()->route('projects.index')
             ->with("mensaje", 'El proyecto contiene pagos que se deben eliminar')
             ->with("tipo", 'danger');
         }else{
-            $projects->delete();
+            $project->delete();
             return redirect()->route('projects.index')
             ->with("mensaje", 'Proyecto eliminado correctamente')
             ->with("tipo", 'success');
@@ -115,8 +115,8 @@ class ProjectController extends Controller
 
     public function delete($id)
     {
-        $projects = Project::findOrFail($id);
-        $pays = $projects->pays;
+        $project = Project::findOrFail($id);
+        $pays = $project->pays;
         if(count($pays)>0){
             return redirect()->route('projects.index')
             ->with("mensaje", 'El proyecto contiene pagos que se deben eliminar')

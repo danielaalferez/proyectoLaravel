@@ -9,11 +9,11 @@
                 <h3 class="text-center text-danger">
                     ¿Está seguro de eliminar su pago?
                 </h3>
-                <form action="{{ route('projects.destroy',['project' => $project->id]) }}" method="POST">
+                <form action="{{ route('pays.destroy',['pay' => $pay->id]) }}" method="POST">
                 @csrf
                 @method('delete')
                 <button type="submit" class="btn btn-danger mt-3">Eliminar</button>
-                <a href="{{ route('projects.index') }}" class="btn btn-success">Regresar</a>
+                <a href="{{ route('pays.index') }}" class="btn btn-success">Regresar</a>
                 </form>
             </div>
         </div>

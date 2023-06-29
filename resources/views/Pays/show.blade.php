@@ -1,8 +1,6 @@
 @extends('layouts.base')
 @section('titulo', 'DETALLE DEL INSCRITO')
-@section("botonera")
 
-@endsection
 @section('contenido')
 <section style="background-color: #e3f2fd; width: 1200px; height: 370px;">
     <div class="container" style="border: 2px solid black; width: 650px; height: 310px; background-color: white; margin-top: 30px;">

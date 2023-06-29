@@ -37,6 +37,9 @@
                                 <a class="nav-link" href="{{ route('pays.index') }}">Pagos</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('final') }}">¡Se acabo!</a>
+                            </li>
+                            <li class="nav-item">
                                 <form id="logout-form" method="POST" action="{{ route('logout') }}">
                                     @csrf
                                 </form>

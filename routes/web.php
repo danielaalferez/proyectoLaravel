@@ -44,6 +44,10 @@ Route::get('/base', function () {
     return view('layouts.base');
 });
 
+Route::get('/finish', function () {
+    return view('layouts.se_acabo');
+})->name("final");;
+
 
 
 
